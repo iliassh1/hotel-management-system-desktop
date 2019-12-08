@@ -1,0 +1,45 @@
+﻿<Window x:Class="Hotel_Management_WPF.Umbuchung_Fenster"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel_Management_WPF"
+        mc:Ignorable="d"
+        Title="Umbuchung_Fenster" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="Grid_Loaded">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="319*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="392*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Buchung Nummer" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.895,3.038" Height="27" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Einchecken" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" Height="27" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Height="27" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Vorname" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" Height="26" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="10,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.474,0.885" Height="27" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Telefon" HorizontalAlignment="Left" Margin="10,396,0,0" VerticalAlignment="Top" Height="27" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Total Preis: " HorizontalAlignment="Left" Margin="10,441,0,0" VerticalAlignment="Top" Height="27" FontSize="14" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Sonstige" HorizontalAlignment="Left" Margin="9,335,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="3"/>
+        <Label HorizontalAlignment="Left" Margin="135,83,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label Content="Verfügbare Zimmern" HorizontalAlignment="Left" Margin="10,215,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="3"/>
+        <Label Content="Auschecken" HorizontalAlignment="Left" Margin="9,162,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Grid.Column="3" Width="102"/>
+        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="23" Margin="156,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.Column="1" TextChanged="txt_name_TextChanged"/>
+        <TextBox x:Name="txt_vorname" HorizontalAlignment="Left" Height="23" Margin="156,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.Column="1"/>
+        <TextBox x:Name="txt_telefon" HorizontalAlignment="Left" Height="23" Margin="156,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.Column="1"/>
+        <ComboBox x:Name="cmbx_sonstige" HorizontalAlignment="Left" Margin="172,340,0,0" VerticalAlignment="Top" Width="144" Grid.Column="3" DropDownClosed="cmbx_sonstige_DropDownClosed" />
+        <DatePicker x:Name="dp_geb" HorizontalAlignment="Left" Margin="156,340,0,0" VerticalAlignment="Top" Width="144" Grid.Column="1"/>
+        <DatePicker x:Name="dp_von" HorizontalAlignment="Left" Margin="156,164,0,0" VerticalAlignment="Top" Width="144" Grid.Column="1" SelectedDateFormat="Short"/>
+        <DatePicker x:Name="dp_bis" HorizontalAlignment="Left" Margin="172,166,0,0" VerticalAlignment="Top" Width="144" Grid.Column="3"/>
+        <Label x:Name="lbl_preis" Content="0.0 €" HorizontalAlignment="Left" Height="27" Margin="185,441,0,0" VerticalAlignment="Top" Width="60" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lbl_buchung" Content="" HorizontalAlignment="Left" Margin="197,110,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="bt_Speichern" Content="Änderung Speichern" HorizontalAlignment="Left" Margin="10,396,0,0" VerticalAlignment="Top" Width="147" Height="29" FontSize="14" FontWeight="Bold" FontStyle="Italic"  Grid.Column="3" Click="bt_Speichern_Click"/>
+        <Button x:Name="cmd_abb" Content="Abbrechen" HorizontalAlignment="Left" Margin="172,396,0,0" VerticalAlignment="Top" Width="144" Height="29" FontSize="14" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="0.538,-3.69"  Grid.Column="3" Click="cmd_abb_Click"/>
+        <ComboBox x:Name="cmbx_zimmer" HorizontalAlignment="Left" Margin="172,215,0,0" VerticalAlignment="Top" Width="144"  Grid.Column="3" DropDownClosed="cmbx_zimmer_DropDownClosed"/>
+        <Label Content="Passport/Ausweis" Grid.Column="3" HorizontalAlignment="Left" Margin="10,278,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="txt_Pass" HorizontalAlignment="Left" Height="23" Margin="172,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="144" Grid.Column="3"/>
+
+
+    </Grid>
+</Window>

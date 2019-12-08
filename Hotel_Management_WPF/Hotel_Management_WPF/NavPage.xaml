@@ -1,0 +1,24 @@
+﻿<Page x:Class="Hotel_Management_WPF.NavPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Hotel_Management_WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1000"
+      Title="NavPage">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top" Grid.ColumnSpan="2">
+
+            <Button Content="Home" Width="106" FontSize="16" FontWeight="Bold" FontFamily="Minion Pro Med" Click="Button_Click"/>
+            <Button Content="Buchung" Width="121" FontSize="16" FontWeight="Bold" FontFamily="Minion Pro Med" Click="Button_Click_1"/>
+            <Button Content="Umbuchung" Width="148" FontSize="16" FontWeight="Bold" FontFamily="Minion Pro Med" Click="Button_Click_2"/>
+            <Button Content="Report" Width="101" FontSize="16" FontWeight="Bold" FontFamily="Minion Pro Med" Click="Button_Click_3"/>
+            <Button Content="Zimmern verwalten" Width="155" Click="btn_zimmer" FontSize="16" FontWeight="Bold" FontFamily="Minion Pro Med"/>
+            <Button Content="Abmelden" Width="93" FontSize="16" FontWeight="Bold" Height="35" VerticalAlignment="Bottom" Click="Button_Click_4" FontFamily="Minion Pro Med"/>
+        </StackPanel>
+
+        <Frame x:Name ="Start" Margin="0,35,0,0" Grid.ColumnSpan="2" Height="900" Width="900" />
+    </Grid>
+</Page>
