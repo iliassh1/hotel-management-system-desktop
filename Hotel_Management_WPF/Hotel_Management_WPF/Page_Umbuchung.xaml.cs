@@ -1,7 +1,6 @@
-﻿/* Dieser Code Anteil wurde geschrieben von:
-Name: Hilmi
-Vorname : Iliass
-Immatrikulation Nummer : 672515
+﻿/*
+Name: Hilmi Iliass
+Manage booking operation
 */
 
 

@@ -1,6 +1,6 @@
-﻿/* Dieser Code Anteil wurde geschrieben von:
-Name: Hilmi
-Vorname : Iliass
+﻿/*
+Name: Hilmi Iliass
+Login and registration
 */
 
 using System;
