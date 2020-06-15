@@ -1,7 +1,6 @@
 ﻿/* Dieser Code Anteil wurde geschrieben von:
 Name: Hilmi
 Vorname : Iliass
-Immatrikulation Nummer : 672515
 */
 
 using System;
@@ -30,10 +29,8 @@ namespace Hotel_Management_WPF
        
         public NavPage()
         {
-         
             InitializeComponent();
             Start.Content = new Page1();
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -68,9 +65,6 @@ namespace Hotel_Management_WPF
             MainWindow win = new MainWindow();
             win.Show();
             (this.Parent as Window).Close();
-
-
-            
         }
     }
 }

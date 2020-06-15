@@ -1,7 +1,6 @@
 ﻿/* Dieser Code Anteil wurde geschrieben von:
 Name: Hilmi
 Vorname : Iliass
-Immatrikulation Nummer : 672515
 */
 
 using System;
@@ -30,8 +29,6 @@ namespace Hotel_Management_WPF
         string dbConnectionString = @"Data Source=Hotel_DB.db; Version= 3;";
         public P_Vergessen()
         {
-
-
             InitializeComponent();
         }
 
@@ -44,37 +41,24 @@ namespace Hotel_Management_WPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
             // Verbindung mit dem DB öffenen
-
             try
             {
-
                 sqliteCon.Open();
-                
                 string Query = "select Passwort, Benutzer_login from Benutzer where Email = '" + this.txt_email2.Text+"' and Geburtsdatum = '"+this.txt_gd.Text+"'";
-                
-
                 SQLiteCommand CreateCommand = new SQLiteCommand(Query, sqliteCon);
-
                 CreateCommand.ExecuteNonQuery();
                 SQLiteDataReader reader = CreateCommand.ExecuteReader();
-
                 int count = 0;
                 string benutzer = reader["Benutzer_login"].ToString();
                 string password = reader["Passwort"].ToString();
-
                 while (reader.Read())
                 {
-                    
                     count++;
-                   
-
                 }
                 if (count == 1)
                 {
-
                     MessageBox.Show("Ihr Benutzer Name lautet: " + benutzer);
                     MessageBox.Show("Ihr Passwort lautet: "+password);
                     /*
@@ -88,26 +72,17 @@ namespace Hotel_Management_WPF
                 }
                 if (count > 1)
                 {
-
                     MessageBox.Show("Kein Konto Mit den eingegebene Daten Vorhanden","Info",MessageBoxButton.OK,MessageBoxImage.Information);
                 }
 
                 if (count < 1)
                 {
-
                     MessageBox.Show("Kein Konto Mit den eingegebene Daten Vorhanden", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-
-
-
-
             }
             sqliteCon.Close();
         }

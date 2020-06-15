@@ -1,7 +1,6 @@
-﻿/* Dieser Code Anteil wurde geschrieben von:
-Name: Hilmi
-Vorname : Iliass
-Immatrikulation Nummer : 672515
+﻿/*
+Name: Hilmi iliass
+Room management
 */
 
 using System;
@@ -31,11 +30,9 @@ namespace Hotel_Management_WPF
         {
             InitializeComponent();
         }
-
         string dbConnectionString = @"Data Source =Hotel_DB.db;Version=3;";
 
         void FillDataGrid() {
-
             DataTable dt = new DataTable();
             DataColumn Id = new DataColumn("id",typeof(int));
             DataColumn Type = new DataColumn("Type",typeof(string));
@@ -43,17 +40,11 @@ namespace Hotel_Management_WPF
             dt.Columns.Add(Id);
             dt.Columns.Add(Type);
             dt.Columns.Add(Preis);
-
-
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
-
             //string Query = " SELECT Buchung_nummer fROM Buchen";
             //string Query = " SELECT Buchung_nummer, Name , Vorname, Geburtsdatum , type , Preis_zimmer from Buchung,Kunden,Zimmer WHERE Buchung.Kunden_id = Kunden.Kunden_id And Buchung.Zimmer_id = Zimmer.Zimmer_id  ";
             //string Query = " SELECT Buchung_nummer, Name , Vorname, Geburtsdatum , type , Preis_zimmer from Buchung,Kunden,Zimmer WHERE Von between '" +datapicke1.ToString()+ "' AND Bis'" + datapik2.ToString() + "' And Buchung.Kunden_id = Kunden.Kunden_id And Buchung.Zimmer_id = Zimmer.Zimmer_id And Buchung.Zimmer_id = Zimmer.Zimmer_id";
@@ -72,13 +63,11 @@ namespace Hotel_Management_WPF
                 da.Fill(ds);
                 DataTable dt = ds.Tables[0];
                 this.Z_dataGrid.ItemsSource = dt.AsDataView();
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Errrrrrrror");
             }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -87,11 +76,8 @@ namespace Hotel_Management_WPF
             sqliteCon.Open();
             string Query = "update Zimmer set Statut = 'true' where statut = 'false' ";
             SQLiteCommand CreateCommand = new SQLiteCommand(Query, sqliteCon);
-
-
             CreateCommand.ExecuteNonQuery();
             MessageBox.Show("Alle zimmern sind frei gegeben");
-           
         }
 
         private void btn_abbrechen_Click(object sender, RoutedEventArgs e)

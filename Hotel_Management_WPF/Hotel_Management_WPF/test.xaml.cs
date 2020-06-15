@@ -24,14 +24,6 @@ namespace Hotel_Management_WPF
         public Buchung()
         {
             InitializeComponent();
-            
         }
-
-      
-
-
-
-        
-
     }
 }

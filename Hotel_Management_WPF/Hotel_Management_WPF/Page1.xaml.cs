@@ -1,7 +1,6 @@
-﻿/* Dieser Code Anteil wurde geschrieben von:
-Name: Hilmi
-Vorname : Iliass
-Immatrikulation Nummer : 672515
+﻿/*
+Name: Iliass Hilmi
+Manage room and checkout function
 */
 
 using System;
@@ -29,16 +28,10 @@ namespace Hotel_Management_WPF
         public Page1()
         {
             InitializeComponent();
-             
-
-
         }
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
 
         }
 
@@ -67,8 +60,6 @@ namespace Hotel_Management_WPF
             MainWindow win = new MainWindow();
             win.Show();
             (this.Parent as Window).Close();
-
-
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)

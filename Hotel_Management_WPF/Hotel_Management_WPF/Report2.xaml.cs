@@ -1,7 +1,6 @@
 ﻿/* Dieser Code Anteil wurde geschrieben von:
 Name: Kamga
 Vorname : Nicodeme
-Immatrikulation Nummer : 671731
 */
 
 
@@ -51,7 +50,6 @@ namespace Hotel_Management_WPF
                 if (datapic1.Text == "" || datapic2.Text == "")                 //|| textbox3.Text == "" || textbox4.Text == "" || cmb1.Text =="")
                 {
                     MessageBox.Show("Bitte Datum ausfüllen ");
-
                 }
                 else
                 {
@@ -64,29 +62,19 @@ namespace Hotel_Management_WPF
                     SQLiteCommand CreateCommand = new SQLiteCommand(Query, sqliteCon);
                     SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(CreateCommand);
                     Zimmer_verwalten ds = new Zimmer_verwalten();
-
-               
                     SQLiteDataReader reader;
                     reader = CreateCommand.ExecuteReader();
                     dataGrid.ItemsSource = reader;
-
                     //sqliteCon.Close();
                     //DataTable dt = new DataTable();
                     //dataAdapter.Fill(dt);
                     //dataGrid.DataSource = dt;
-
-
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
     }
-
 }

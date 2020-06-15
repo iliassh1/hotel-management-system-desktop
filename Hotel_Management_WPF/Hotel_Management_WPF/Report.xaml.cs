@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+Name: Iliass Hilmi
+Get report
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,22 +35,18 @@ namespace WpfApp1
         internal void Show()
         {
             throw new NotImplementedException();
-            
         }
         string dbConnectionString = @"Data Source =Hotel_DB.dbn;Version=3;";
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
-
-
             try
             {
                 sqliteCon.Open();
                 if (datapic1.Text == "" || datapic2.Text == "")                 //|| textbox3.Text == "" || textbox4.Text == "" || cmb1.Text =="")
                 {
                     MessageBox.Show("Bitte Datum ausfüllen ");
-
                 }
                 else
                 {
@@ -61,24 +61,16 @@ namespace WpfApp1
                     SQLiteDataReader reader;
                     reader = CreateCommand.ExecuteReader();
                     dataGrid.ItemsSource = reader;
-
                     //sqliteCon.Close();
                     //DataTable dt = new DataTable();
                     //dataAdapter.Fill(dt);
                     //dataGrid.DataSource = dt;
-
-
-
-
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
     }
-   
 }

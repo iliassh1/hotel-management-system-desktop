@@ -1,7 +1,6 @@
 ﻿/* Dieser Code Anteil wurde geschrieben von:
 Name: Hilmi
 Vorname : Iliass
-Immatrikulation Nummer : 672515
 */
 
 using System;
@@ -19,24 +18,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SQLite;
 
-
-
-
-
-
-
 namespace Hotel_Management_WPF
 {
-
-
-
     /// <summary>
     /// Interaktionslogik für Konto.xaml
     /// </summary>
     public partial class Konto : Window
-
     {
-
         public void Fieldempty() {
             txt_benutzer.Text = "";
             txt_email.Text = "";
@@ -45,7 +33,6 @@ namespace Hotel_Management_WPF
             dp_geburt2.Text = "";
             txt_Password.Password = "";
             txt_PasswW.Password = "";
-            
         }
         // Funktion um die Daten zu Validieren
         public bool ValidateDate(string date)
@@ -61,7 +48,6 @@ namespace Hotel_Management_WPF
                     DateTime(Convert.ToInt32(dateParts[2]),
                     Convert.ToInt32(dateParts[0]),
                     Convert.ToInt32(dateParts[1]));
-
                 return true;
             }
             catch
@@ -71,9 +57,7 @@ namespace Hotel_Management_WPF
                 return false;
             }
         }
-        
         string dbConnectionString = @"Data Source=Hotel_DB.db; Version= 3;";
-
         public Konto()
         {
             InitializeComponent();
@@ -81,71 +65,53 @@ namespace Hotel_Management_WPF
 
         private void btn_b_Click(object sender, RoutedEventArgs e)
         {
-
             SQLiteConnection sqliteCon = new SQLiteConnection(dbConnectionString);
             // Verbindung mit dem DB öffenen
 
             try
             {
-
                 sqliteCon.Open();
                 string Query = "insert into Benutzer (Name, Vorname, Geburtsdatum,Email,Benutzer_login, Passwort) values ('"+this.txt_name.Text+"','"+this.txt_vorname.Text+"','"+this.dp_geburt2.Text+"','"+this.txt_email.Text+"','"+this.txt_benutzer.Text+"','" + this.txt_Password.Password  +"')"; 
                 SQLiteCommand CreateCommand = new SQLiteCommand(Query, sqliteCon);
-
-
                 if (txt_vorname.Text == "" ||  txt_name.Text == " " || dp_geburt2.Text == "" || txt_email.Text=="" || txt_Password.Password=="" || txt_PasswW.Password=="" ) {
                     MessageBox.Show("Sie müssen alle Felder ausfüllen");
 
                 }
-                  else { 
-
+                else {
                      if (txt_Password.Password == txt_PasswW.Password)
-                     {                   
+                     {
+                         if (Check1.IsChecked == true)
+                         {
+                               CreateCommand.ExecuteNonQuery();
+                                MessageBox.Show("Das Konto ist Erfolgreich Erstellt");
+                                Fieldempty();
 
-                   
-                             if (Check1.IsChecked == true)
-                             {
-                                   CreateCommand.ExecuteNonQuery();
-                                    MessageBox.Show("Das Konto ist Erfolgreich Erstellt");
-                                    Fieldempty();
-                                    
-                             }
-                                else {
-                                    MessageBox.Show("Sie müssne die Nutzung Bedingungen zustimmen");
-                                 }
-                  }
-                
+                         }
+                         else {
+                                MessageBox.Show("Sie müssne die Nutzung Bedingungen zustimmen");
+                         }
+                     }
                     else {
-
                            MessageBox.Show("das Passwort entspricht nicht");
-
-
                     }
-                  }
+                }
 
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
-
-
-
-
             }
             sqliteCon.Close();
         }
-    
     private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
             window.Show();
             this.Close();
         }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-          
+
         }
     }
 }
